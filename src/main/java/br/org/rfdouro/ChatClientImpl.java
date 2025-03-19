@@ -29,7 +29,7 @@ public class ChatClientImpl implements ChatClient {
 
    //Registry registry = LocateRegistry.getRegistry("localhost", 1099);
    //Registry registry = LocateRegistry.getRegistry("chatrmi.onrender.com", 1099);
-   Registry registry = LocateRegistry.getRegistry("216.24.57.4", 80);
+   Registry registry = LocateRegistry.getRegistry("216.24.57.4", 1099);
    
    
    Chat chatServer = (Chat) registry.lookup("Chat");
