@@ -4,13 +4,12 @@ RUN apt-get update
 RUN apt-get install openjdk-17-jdk -y
 COPY . .
 
-RUN javac ChatServer.java
+RUN apt-get install maven -y
+RUN mvn clean compile assembly:single
 
 FROM openjdk:17-jdk-slim
 
 EXPOSE 1099
-
-RUN mkdir -p /home/chat
 
 COPY --from=build /target/chatrmi-jar-with-dependencies.jar chatrmi.jar
 
