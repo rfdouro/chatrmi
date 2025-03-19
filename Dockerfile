@@ -9,7 +9,7 @@ RUN mvn clean compile assembly:single
 
 FROM openjdk:17-jdk-slim
 
-EXPOSE 8080
+EXPOSE 1099:1099
 
 COPY --from=build /target/chatrmi-jar-with-dependencies.jar chatrmi.jar
 

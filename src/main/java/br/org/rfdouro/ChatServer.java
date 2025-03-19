@@ -40,7 +40,7 @@ public class ChatServer implements Chat {
    ChatServer server = new ChatServer();
    Chat stub = (Chat) UnicastRemoteObject.exportObject(server, 0);
 
-   Registry registry = LocateRegistry.createRegistry(8080);
+   Registry registry = LocateRegistry.createRegistry(1099);
    registry.rebind("Chat", stub);
 
    System.out.println("Servidor de Chat RMI pronto!");
