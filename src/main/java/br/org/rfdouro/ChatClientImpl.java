@@ -27,7 +27,11 @@ public class ChatClientImpl implements ChatClient {
    ChatClientImpl client = new ChatClientImpl(name);
    ChatClient stub = (ChatClient) UnicastRemoteObject.exportObject(client, 0);
 
-   Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+   //Registry registry = LocateRegistry.getRegistry("localhost", 1099);
+   //Registry registry = LocateRegistry.getRegistry("chatrmi.onrender.com", 1099);
+   Registry registry = LocateRegistry.getRegistry("216.24.57.4", 80);
+   
+   
    Chat chatServer = (Chat) registry.lookup("Chat");
 
    chatServer.registerClient(stub);
