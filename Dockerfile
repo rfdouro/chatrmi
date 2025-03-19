@@ -1,8 +1,8 @@
 FROM ubuntu:latest AS build
 
-ARG java.rmi.server.hostname
-
-ENV java.rmi.server.hostname=${java.rmi.server.hostname}
+#ARG java.rmi.server.hostname
+#ENV java.rmi.server.hostname=${java.rmi.server.hostname}
+ENV java.rmi.server.hostname='216.24.57.4'
 
 RUN apt-get update
 RUN apt-get install openjdk-17-jdk -y
